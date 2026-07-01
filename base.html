@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Community Recipe Guide{% endblock %}</title>
+  <meta name="description" content="Turn the ingredients you already have into accessible, nutritious recipes. A health-equity focused recipe generator.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header class="site-header">
+    <a href="{{ url_for('home') }}" class="brand">
+      <span class="brand-mark">🥄</span>
+      Community Recipe Guide
+    </a>
+    <nav class="site-nav">
+      <a href="{{ url_for('home') }}">Recipe Generator</a>
+      <a href="{{ url_for('about') }}">Our Mission</a>
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    Community Recipe Guide &mdash; built for the Congressional App Challenge to support food and health equity.
+  </footer>
+</body>
+</html>

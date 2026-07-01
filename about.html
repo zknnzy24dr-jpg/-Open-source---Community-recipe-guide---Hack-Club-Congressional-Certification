@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}Our Mission — Community Recipe Guide{% endblock %}
+
+{% block content %}
+<div class="about-page">
+  <h1>Cooking shouldn't require a perfect pantry.</h1>
+  <p>
+    Community Recipe Guide started from a simple observation: most recipe
+    sites assume you're shopping for a specific dish. But for a lot of
+    families, the real question is the opposite one &mdash; "what can I make
+    with what I already have?" That question matters most for households
+    navigating tight grocery budgets, food deserts, or unpredictable income,
+    where an extra trip to the store isn't always possible.
+  </p>
+
+  <section>
+    <h2>How the recipe generator works</h2>
+    <p>
+      You list the ingredients you have on hand. The generator checks them
+      against a database of recipes built around shelf-stable, low-cost
+      staples &mdash; rice, beans, lentils, pasta, eggs, canned tomatoes &mdash;
+      and ranks results by how well they match what you already own, then by
+      estimated cost per serving. Cheaper, more complete matches surface first.
+    </p>
+    <p>
+      The matching logic is fully rule-based and runs entirely on the server
+      with no external API calls, so the tool works offline, loads instantly,
+      and never depends on a third-party AI service being available.
+    </p>
+  </section>
+
+  <section>
+    <h2>Why health equity</h2>
+    <p>
+      Nutrition guidance often assumes resources that not every household
+      has. By starting from "what do you already have" rather than "here's
+      what you need to buy," the guide tries to meet people where they are
+      and reduce the friction between wanting to cook a healthy meal and
+      actually being able to.
+    </p>
+  </section>
+
+  <section>
+    <h2>About this submission</h2>
+    <p>
+      This project was built as a Congressional App Challenge submission
+      using Python and Flask. The full source code is open and available
+      for review &mdash; see the project README for setup instructions and
+      an overview of how each part of the application works.
+    </p>
+  </section>
+</div>
+{% endblock %}

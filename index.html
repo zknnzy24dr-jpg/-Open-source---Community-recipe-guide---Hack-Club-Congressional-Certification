@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block title %}Community Recipe Guide — Turn what's in your pantry into a meal{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <div>
+    <span class="hero-eyebrow">Food &amp; Health Equity Project</span>
+    <h1>Turn what's already in your kitchen into tonight's dinner.</h1>
+    <p>
+      Community Recipe Guide matches the ingredients you already have to
+      affordable, nutritious recipes &mdash; no extra grocery trip required.
+      Built for families navigating food access, on any budget.
+    </p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <strong>{{ recipe_count }}</strong>
+        <span>recipes in the guide</span>
+      </div>
+      <div class="hero-stat">
+        <strong>&lt;$1.50</strong>
+        <span>avg. cost per serving</span>
+      </div>
+      <div class="hero-stat">
+        <strong>$0</strong>
+        <span>cost to use</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-art">
+    <div class="hero-art-label">What's in the pantry right now</div>
+    <div class="pantry-jars">
+      <span class="jar-chip">rice</span>
+      <span class="jar-chip">beans</span>
+      <span class="jar-chip">eggs</span>
+      <span class="jar-chip">canned tomatoes</span>
+      <span class="jar-chip">onion</span>
+      <span class="jar-chip">pasta</span>
+      <span class="jar-chip">oats</span>
+      <span class="jar-chip">lentils</span>
+      <span class="jar-chip">potatoes</span>
+      <span class="jar-chip">tortillas</span>
+    </div>
+  </div>
+</section>
+
+<section class="generator" id="generator">
+  <h2>Tell us what you have</h2>
+  <p class="helper-text">List your ingredients separated by commas. We'll match them to recipes that use what's already on your shelf.</p>
+
+  <div class="input-row">
+    <label for="ingredient-input" class="sr-only" style="position:absolute; left:-9999px;">Ingredients you have on hand</label>
+    <input
+      type="text"
+      id="ingredient-input"
+      placeholder="e.g. rice, beans, onion, garlic"
+      autocomplete="off"
+    >
+    <button class="btn-primary" id="generate-btn" type="button">Find recipes</button>
+  </div>
+
+  <div class="quick-examples">
+    <span>Try:</span>
+    <button class="example-chip" type="button" data-example="rice, beans, onion, garlic">rice, beans, onion, garlic</button>
+    <button class="example-chip" type="button" data-example="eggs, rice, soy sauce">eggs, rice, soy sauce</button>
+    <button class="example-chip" type="button" data-example="oats, milk, banana">oats, milk, banana</button>
+    <button class="example-chip" type="button" data-example="lentils, carrots, onion">lentils, carrots, onion</button>
+  </div>
+
+  <div id="results" aria-live="polite"></div>
+</section>
+
+<section class="mission">
+  <div class="mission-card">
+    <span class="mission-eyebrow">01 — Why it matters</span>
+    <h3>Food access shouldn't depend on a big grocery budget</h3>
+    <p>Every recipe is built around low-cost, shelf-stable staples so a full meal stays within reach, no matter the week.</p>
+  </div>
+  <div class="mission-card">
+    <span class="mission-eyebrow">02 — How it works</span>
+    <h3>Match, don't shop</h3>
+    <p>The generator scores recipes against what you already own first, so you cook with your pantry instead of a new shopping list.</p>
+  </div>
+  <div class="mission-card">
+    <span class="mission-eyebrow">03 — Who it's for</span>
+    <h3>Families, students, and community kitchens</h3>
+    <p>Designed alongside community nutrition partners to be useful at home, in food pantries, and in after-school programs.</p>
+  </div>
+</section>
+
+<script src="{{ url_for('static', filename='js/generator.js') }}"></script>
+{% endblock %}
